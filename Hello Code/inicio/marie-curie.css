@@ -1,0 +1,727 @@
+/* =====================================================
+  BERNOULLI — MARIE CURIE
+  ===================================================== */
+
+/* ================= VARIÁVEIS ================= */
+:root {
+   --blue-dark: #75889C;
+   --blue-light: #B6C6D4;
+   --cream: #E1DBD3;
+   --brown: #BAA49F;
+   --pink: #F2D1C8;
+   --white: #FAF9F7;
+   --black: #303238;
+}
+
+/* ================= RESET ================= */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+   font-family: "Inter", sans-serif;
+   background: var(--white);
+   color: var(--black);
+   line-height: 1.6;
+}
+
+img {
+   max-width: 100%;
+   display: block;
+}
+
+a {
+   color: inherit;
+   text-decoration: none;
+}
+
+button {
+   font-family: inherit;
+}
+
+/* ================= HEADER ================= */
+.header {
+   width: 100%;
+   background: var(--pink);
+   border-bottom: 1px solid rgba(48, 50, 56, 0.12);
+}
+
+.header-container {
+   width: min(1200px, 90%);
+   margin: 0 auto;
+   min-height: 82px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.logo {
+   font-family: "DM Serif Display", serif;
+   font-size: 2rem;
+   letter-spacing: -1px;
+}
+
+.logo span,
+.footer-logo span {
+   color: var(--blue-dark);
+}
+
+.nav {
+   display: flex;
+   align-items: center;
+   gap: 35px;
+}
+
+.nav a {
+   font-size: 0.78rem;
+   text-transform: uppercase;
+   letter-spacing: 1.5px;
+   transition: 0.3s ease;
+}
+
+.nav a:hover {
+   color: var(--blue-dark);
+}
+
+.menu-toggle {
+   display: none;
+   border: none;
+   background: transparent;
+   font-size: 1.7rem;
+   cursor: pointer;
+}
+
+/* ================= HERO ================= */
+.hero {
+   width: min(1200px, 90%);
+   margin: 0 auto;
+   min-height: 650px;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   align-items: center;
+   gap: 80px;
+   padding: 90px 0;
+}
+
+.hero-text {
+   position: relative;
+}
+
+.eyebrow {
+   display: block;
+   font-size: 0.7rem;
+   font-weight: 600;
+   letter-spacing: 3px;
+   text-transform: uppercase;
+   color: var(--blue-dark);
+   margin-bottom: 20px;
+}
+
+.hero h1 {
+   font-family: "DM Serif Display", serif;
+   font-size: clamp(4rem, 8vw, 7rem);
+   line-height: 0.9;
+   font-weight: 400;
+   margin-bottom: 30px;
+}
+
+.hero h1 em {
+   color: var(--brown);
+}
+
+.hero-subtitle {
+   max-width: 450px;
+   font-size: 1.05rem;
+   font-weight: 300;
+   color: #666;
+}
+
+.hero-image {
+   position: relative;
+}
+
+.image-frame {
+   width: 100%;
+   height: 540px;
+   background: var(--blue-light);
+   padding: 20px;
+   position: relative;
+}
+
+.image-frame::before {
+   content: "";
+   position: absolute;
+   top: -15px;
+   right: -15px;
+   width: 100px;
+   height: 100px;
+   border-top: 2px solid var(--brown);
+   border-right: 2px solid var(--brown);
+   pointer-events: none;
+}
+
+.image-frame img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   object-position: center top;
+   filter: sepia(8%);
+}
+
+.image-caption {
+   display: block;
+   margin-top: 14px;
+   font-family: "Caveat", cursive;
+   font-size: 1.2rem;
+   color: var(--brown);
+   transform: rotate(-2deg);
+}
+
+/* ================= QUICK INFO ================= */
+.quick-info {
+   width: 100%;
+   background: var(--blue-dark);
+   color: var(--white);
+   padding: 45px max(5%, calc((100% - 1200px) / 2));
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 35px;
+}
+
+.info-item {
+   display: flex;
+   gap: 15px;
+   align-items: flex-start;
+}
+
+.info-number {
+   font-family: "DM Serif Display", serif;
+   font-size: 1.2rem;
+   color: var(--pink);
+}
+
+.info-label {
+   display: block;
+   font-size: 0.65rem;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   opacity: 0.7;
+   margin-bottom: 4px;
+}
+
+.info-item p {
+   font-size: 0.9rem;
+}
+
+/* ================= SEÇÕES ================= */
+.section {
+   width: min(1100px, 88%);
+   margin: 0 auto;
+   padding: 120px 0;
+}
+
+.section-title {
+   display: grid;
+   grid-template-columns: 70px 1fr;
+   gap: 25px;
+   margin-bottom: 60px;
+}
+
+.section-number {
+   font-family: "Caveat", cursive;
+   font-size: 1.6rem;
+   color: var(--brown);
+   padding-top: 10px;
+}
+
+.section-title h2 {
+   font-family: "DM Serif Display", serif;
+   font-size: clamp(2.7rem, 5vw, 4.5rem);
+   font-weight: 400;
+   line-height: 0.95;
+}
+
+.section-title h2 em {
+   color: var(--blue-dark);
+}
+
+/* ================= BIOGRAFIA ================= */
+.biography {
+   display: grid;
+   grid-template-columns: 0.8fr 1.2fr;
+   gap: 100px;
+}
+
+.biography .section-title {
+   display: block;
+   margin: 0;
+}
+
+.biography .section-number {
+   margin-bottom: 20px;
+}
+
+.section-content {
+   max-width: 650px;
+}
+
+.section-content p {
+   color: #626262;
+   font-size: 1rem;
+   margin-bottom: 25px;
+}
+
+.section-content .large-text {
+   font-family: "DM Serif Display", serif;
+   font-size: 1.55rem;
+   line-height: 1.4;
+   color: var(--black);
+}
+
+/* ================= RADIOATIVIDADE ================= */
+.radioactivity {
+   background: var(--cream);
+   min-height: 500px;
+   padding: 90px max(6%, calc((100% - 1100px) / 2));
+   display: grid;
+   grid-template-columns: 1.3fr 0.7fr;
+   align-items: center;
+   gap: 80px;
+}
+
+.radio-content h2 {
+   font-family: "DM Serif Display", serif;
+   font-size: clamp(3rem, 5vw, 5rem);
+   font-weight: 400;
+   line-height: 0.95;
+   margin-bottom: 30px;
+}
+
+.radio-content h2 em {
+   color: var(--brown);
+}
+
+.radio-content p {
+   max-width: 650px;
+   color: #5f5f5f;
+   margin-bottom: 20px;
+}
+
+.radio-symbol {
+   text-align: center;
+}
+
+.symbol-circle {
+   width: 220px;
+   height: 220px;
+   margin: 0 auto 20px;
+   border-radius: 50%;
+   background: var(--blue-dark);
+   color: var(--pink);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 5rem;
+   transform: rotate(-8deg);
+}
+
+.radio-symbol p {
+   font-size: 0.7rem;
+   letter-spacing: 3px;
+   color: var(--blue-dark);
+}
+
+/* ================= NOBEL ================= */
+.nobel {
+   display: grid;
+   grid-template-columns: 0.8fr 1.2fr;
+   gap: 80px;
+}
+
+.nobel-cards {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 25px;
+}
+
+.nobel-card {
+   background: var(--pink);
+   padding: 35px;
+   min-height: 280px;
+   transition: transform 0.3s ease;
+}
+
+.nobel-card:hover {
+   transform: translateY(-6px);
+}
+
+.nobel-card:nth-child(2) {
+   background: var(--blue-light);
+}
+
+.year {
+   font-family: "Caveat", cursive;
+   font-size: 2rem;
+   color: var(--blue-dark);
+}
+
+.nobel-card h3 {
+   font-family: "DM Serif Display", serif;
+   font-size: 2rem;
+   font-weight: 400;
+   margin: 15px 0;
+}
+
+.nobel-card p {
+   font-size: 0.9rem;
+   color: #555;
+}
+
+/* ================= ESTUDOS ================= */
+.studies {
+   background: var(--cream);
+   width: 100%;
+   padding-left: max(6%, calc((100% - 1100px) / 2));
+   padding-right: max(6%, calc((100% - 1100px) / 2));
+}
+
+.study-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 25px;
+}
+
+.study-card {
+   background: var(--white);
+   padding: 35px;
+   min-height: 280px;
+   border: 1px solid rgba(48, 50, 56, 0.08);
+}
+
+.study-card > span {
+   font-family: "Caveat", cursive;
+   color: var(--brown);
+   font-size: 1.5rem;
+}
+
+.study-card h3 {
+   font-family: "DM Serif Display", serif;
+   font-size: 2rem;
+   font-weight: 400;
+   margin: 30px 0 15px;
+}
+
+.study-card p {
+   font-size: 0.9rem;
+   color: #666;
+}
+
+/* ================= CONTRIBUIÇÕES ================= */
+.contribution-list {
+   border-top: 1px solid #ddd;
+}
+
+.contribution {
+   display: grid;
+   grid-template-columns: 80px 1fr;
+   gap: 30px;
+   padding: 35px 0;
+   border-bottom: 1px solid #ddd;
+}
+
+.contribution > span {
+   font-family: "Caveat", cursive;
+   font-size: 1.5rem;
+   color: var(--brown);
+}
+
+.contribution h3 {
+   font-family: "DM Serif Display", serif;
+   font-size: 2rem;
+   font-weight: 400;
+   margin-bottom: 8px;
+}
+
+.contribution p {
+   max-width: 700px;
+   color: #666;
+}
+
+/* ================= CURIOSIDADES ================= */
+.curiosities {
+   background: var(--pink);
+   padding: 110px max(6%, calc((100% - 1100px) / 2));
+}
+
+.curiosity-header {
+   margin-bottom: 60px;
+}
+
+.curiosity-header h2 {
+   font-family: "DM Serif Display", serif;
+   font-size: clamp(3rem, 5vw, 4.5rem);
+   font-weight: 400;
+   line-height: 0.95;
+}
+
+.curiosity-header h2 em {
+   color: var(--blue-dark);
+}
+
+.curiosity-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 25px;
+}
+
+.curiosity-card {
+   background: rgba(255, 255, 255, 0.55);
+   padding: 35px;
+   min-height: 250px;
+}
+
+.curiosity-card > span {
+   font-family: "Caveat", cursive;
+   color: var(--brown);
+   font-size: 1.5rem;
+}
+
+.curiosity-card h3 {
+   font-family: "DM Serif Display", serif;
+   font-size: 1.8rem;
+   font-weight: 400;
+   margin: 25px 0 12px;
+}
+
+.curiosity-card p {
+   font-size: 0.9rem;
+   color: #5f5f5f;
+}
+
+/* ================= LEGADO ================= */
+.legacy {
+   background: var(--blue-dark);
+   color: var(--white);
+   padding: 120px 6%;
+   text-align: center;
+}
+
+.legacy-inner {
+   max-width: 850px;
+   margin: 0 auto;
+}
+
+.legacy .eyebrow {
+   color: var(--pink);
+}
+
+.legacy h2 {
+   font-family: "DM Serif Display", serif;
+   font-size: clamp(3.5rem, 6vw, 6rem);
+   font-weight: 400;
+   line-height: 0.95;
+   margin-bottom: 35px;
+}
+
+.legacy h2 em {
+   color: var(--pink);
+}
+
+.legacy p {
+   max-width: 650px;
+   margin: 0 auto;
+   color: rgba(255, 255, 255, 0.8);
+   font-size: 1rem;
+}
+
+/* ================= BOTÃO VOLTAR ================= */
+.back-section {
+   padding: 70px 6%;
+   text-align: center;
+   background: var(--white);
+}
+
+.back-button {
+   display: inline-block;
+   padding: 15px 30px;
+   border: 1px solid var(--blue-dark);
+   color: var(--blue-dark);
+   font-size: 0.8rem;
+   text-transform: uppercase;
+   letter-spacing: 1.5px;
+   transition: 0.3s ease;
+}
+
+.back-button:hover {
+   background: var(--blue-dark);
+   color: var(--white);
+}
+
+/* ================= FOOTER ================= */
+.footer {
+   background: var(--cream);
+   padding: 45px 6%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 20px;
+   border-top: 1px solid rgba(48, 50, 56, 0.1);
+}
+
+.footer-logo {
+   font-family: "DM Serif Display", serif;
+   font-size: 1.8rem;
+}
+
+.footer p {
+   font-size: 0.8rem;
+   color: #666;
+}
+
+.footer > span {
+   font-size: 0.7rem;
+   color: #777;
+}
+
+/* ================= ANIMAÇÕES ================= */
+.hidden {
+   opacity: 0;
+   transform: translateY(30px);
+   transition:
+       opacity 0.7s ease,
+       transform 0.7s ease;
+}
+
+.show {
+   opacity: 1;
+   transform: translateY(0);
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 900px) {
+   .nav {
+       gap: 18px;
+   }
+
+   .hero {
+       grid-template-columns: 1fr;
+       gap: 50px;
+       padding: 70px 0;
+   }
+
+   .hero-image {
+       max-width: 600px;
+   }
+
+   .quick-info {
+       grid-template-columns: repeat(2, 1fr);
+   }
+
+   .biography,
+   .nobel {
+       grid-template-columns: 1fr;
+       gap: 50px;
+   }
+
+   .radioactivity {
+       grid-template-columns: 1fr;
+       gap: 50px;
+   }
+
+   .study-grid,
+   .curiosity-grid {
+       grid-template-columns: 1fr;
+   }
+}
+
+@media (max-width: 650px) {
+   .header-container {
+       min-height: 70px;
+   }
+
+   .menu-toggle {
+       display: block;
+   }
+
+   .nav {
+       position: absolute;
+       top: 70px;
+       left: 0;
+       width: 100%;
+       background: var(--pink);
+       padding: 25px;
+       display: none;
+       flex-direction: column;
+       align-items: flex-start;
+       z-index: 100;
+   }
+
+   .nav.active {
+       display: flex;
+   }
+
+   .hero {
+       width: 88%;
+       padding: 60px 0;
+   }
+
+   .hero h1 {
+       font-size: 4rem;
+   }
+
+   .image-frame {
+       height: 430px;
+   }
+
+   .quick-info {
+       grid-template-columns: 1fr;
+       padding: 40px 8%;
+   }
+
+   .section {
+       padding: 80px 0;
+   }
+
+   .section-title {
+       grid-template-columns: 45px 1fr;
+       gap: 10px;
+   }
+
+   .section-title h2 {
+       font-size: 2.8rem;
+   }
+
+   .nobel-cards {
+       grid-template-columns: 1fr;
+   }
+
+   .radioactivity {
+       padding: 80px 8%;
+   }
+
+   .radio-content h2 {
+       font-size: 3rem;
+   }
+
+   .symbol-circle {
+       width: 170px;
+       height: 170px;
+       font-size: 4rem;
+   }
+
+   .contribution {
+       grid-template-columns: 45px 1fr;
+       gap: 15px;
+   }
+
+   .footer {
+       flex-direction: column;
+       text-align: center;
+   }
+}

@@ -1,0 +1,710 @@
+/* =====================================================
+  BERNOULLI — ADA LOVELACE
+  ===================================================== */
+:root {
+   --blue-dark: #75889C;
+   --blue-light: #B6C6D4;
+   --cream: #E1DBD3;
+   --brown: #BAA49F;
+   --pink: #F2D1C8;
+   --white: #FAF9F7;
+   --black: #303238;
+}
+
+/* RESET */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+   background: var(--white);
+   color: var(--black);
+   font-family: "Inter", sans-serif;
+   line-height: 1.6;
+}
+
+a {
+   text-decoration: none;
+   color: inherit;
+}
+
+/* =====================================================
+  HEADER
+  ===================================================== */
+.header {
+   height: 82px;
+   padding: 0 7%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background: rgba(250, 249, 247, 0.96);
+   border-bottom: 1px solid rgba(117, 136, 156, 0.15);
+   position: sticky;
+   top: 0;
+   z-index: 100;
+   backdrop-filter: blur(10px);
+}
+
+.logo {
+   font-family: "DM Serif Display", serif;
+   font-size: 30px;
+}
+
+.logo span {
+   color: var(--brown);
+}
+
+.navigation {
+   display: flex;
+   gap: 35px;
+}
+
+.navigation a {
+   font-size: 12px;
+   text-transform: uppercase;
+   letter-spacing: 1.5px;
+   color: #555;
+   transition: 0.3s;
+}
+
+.navigation a:hover {
+   color: var(--blue-dark);
+}
+
+.menu-button {
+   display: none;
+   border: none;
+   background: none;
+   font-size: 24px;
+   cursor: pointer;
+}
+
+/* =====================================================
+  TEXTOS GERAIS
+  ===================================================== */
+.section-tag {
+   font-size: 10px;
+   letter-spacing: 3px;
+   text-transform: uppercase;
+   color: var(--blue-dark);
+   font-weight: 600;
+}
+
+/* =====================================================
+  HERO
+  ===================================================== */
+.profile-hero {
+   min-height: 700px;
+   padding: 90px 12%;
+   display: grid;
+   grid-template-columns: 1fr 0.85fr;
+   align-items: center;
+   gap: 100px;
+   background:
+       radial-gradient(
+           circle at 10% 20%,
+           rgba(242, 209, 200, 0.6),
+           transparent 30%
+       ),
+       var(--white);
+}
+
+.profile-text h1 {
+   font-family: "DM Serif Display", serif;
+   font-size: clamp(70px, 8vw, 115px);
+   line-height: 0.86;
+   font-weight: 400;
+   margin: 25px 0;
+}
+
+.profile-text h1 em {
+   color: var(--blue-dark);
+   font-style: italic;
+}
+
+.subtitle {
+   color: var(--brown);
+   font-size: 18px;
+   font-weight: 500;
+   max-width: 400px;
+}
+
+.profile-line {
+   width: 100px;
+   height: 2px;
+   background: var(--brown);
+   margin: 30px 0;
+}
+
+.intro {
+   max-width: 500px;
+   color: #666;
+   font-size: 14px;
+   line-height: 1.9;
+}
+
+/* =====================================================
+  FOTO
+  ===================================================== */
+.profile-photo {
+   height: 530px;
+   position: relative;
+   background: var(--blue-light);
+   overflow: hidden;
+   box-shadow:
+       20px 20px 0 var(--pink);
+}
+
+.profile-photo img {
+   width: 100%;
+   height: 100%;
+   display: block;
+   object-fit: cover;
+   object-position: center;
+}
+
+.photo-number {
+   position: absolute;
+   top: 20px;
+   right: 20px;
+   width: 55px;
+   height: 55px;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: rgba(255,255,255,0.9);
+   color: var(--blue-dark);
+   font-family: "DM Serif Display", serif;
+   font-size: 23px;
+}
+
+.photo-caption {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   padding: 25px;
+   color: white;
+   font-family: "DM Serif Display", serif;
+   font-size: 25px;
+   background:
+       linear-gradient(
+           transparent,
+           rgba(48,50,56,0.75)
+       );
+}
+
+.photo-caption span {
+   display: block;
+   font-family: "Inter", sans-serif;
+   font-size: 9px;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+}
+
+/* =====================================================
+  QUICK INFO
+  ===================================================== */
+.quick-info {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   padding: 45px 10%;
+   background: var(--cream);
+}
+
+.info-item {
+   padding: 10px 25px;
+   border-right: 1px solid rgba(117,136,156,0.25);
+}
+
+.info-item:last-child {
+   border-right: none;
+}
+
+.info-item span {
+   display: block;
+   font-size: 9px;
+   text-transform: uppercase;
+   letter-spacing: 1.5px;
+   color: var(--blue-dark);
+   margin-bottom: 8px;
+}
+
+.info-item strong {
+   font-size: 12px;
+   font-weight: 500;
+}
+
+/* =====================================================
+  BIOGRAFIA
+  ===================================================== */
+.biography {
+   padding: 120px 12%;
+   display: grid;
+   grid-template-columns: 100px 1fr;
+   gap: 60px;
+}
+
+.section-number {
+   font-family: "DM Serif Display", serif;
+   font-size: 70px;
+   color: var(--blue-light);
+}
+
+.biography h2 {
+   font-family: "DM Serif Display", serif;
+   font-weight: 400;
+   font-size: clamp(45px, 5vw, 70px);
+   line-height: 1;
+   margin: 20px 0 50px;
+}
+
+.biography h2 em {
+   color: var(--brown);
+}
+
+.text-columns {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 35px 70px;
+   max-width: 950px;
+}
+
+.text-columns p {
+   font-size: 14px;
+   color: #656567;
+   line-height: 1.9;
+}
+
+/* =====================================================
+  CONTRIBUIÇÃO
+  ===================================================== */
+.contribution {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   min-height: 650px;
+}
+
+.contribution-image {
+   position: relative;
+   background: var(--blue-dark);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   overflow: hidden;
+}
+
+.machine-decoration {
+   position: absolute;
+   inset: 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   font-family: monospace;
+   font-size: 70px;
+   opacity: 0.08;
+   transform: rotate(-15deg);
+}
+
+.machine-title {
+   position: relative;
+   z-index: 2;
+   font-family: "DM Serif Display", serif;
+   color: white;
+   font-size: 65px;
+   line-height: 0.95;
+   text-align: center;
+}
+
+.machine-title em {
+   color: var(--pink);
+}
+
+.contribution-content {
+   padding: 100px 12%;
+   background: var(--pink);
+}
+
+.contribution-content h2 {
+   font-family: "DM Serif Display", serif;
+   font-size: 70px;
+   line-height: 0.9;
+   font-weight: 400;
+   margin: 20px 0 40px;
+}
+
+.contribution-content h2 em {
+   color: var(--blue-dark);
+}
+
+.contribution-content > p {
+   font-size: 14px;
+   color: #5f5c5b;
+   line-height: 1.9;
+   margin-bottom: 18px;
+}
+
+.highlight {
+   display: flex;
+   gap: 20px;
+   padding: 25px;
+   margin-top: 35px;
+   background: rgba(255,255,255,0.45);
+}
+
+.highlight span {
+   font-size: 25px;
+   color: var(--blue-dark);
+}
+
+.highlight p {
+   font-size: 12px;
+   line-height: 1.8;
+}
+
+/* =====================================================
+  ESTUDOS
+  ===================================================== */
+.studies {
+   padding: 120px 9%;
+   background: var(--white);
+}
+
+.studies-header h2 {
+   font-family: "DM Serif Display", serif;
+   font-size: 65px;
+   font-weight: 400;
+   line-height: 0.95;
+   margin-top: 20px;
+}
+
+.studies-header em {
+   color: var(--brown);
+}
+
+.studies-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 25px;
+   margin-top: 60px;
+}
+
+.study-card {
+   padding: 40px;
+   min-height: 280px;
+   background: var(--cream);
+   position: relative;
+   transition: 0.3s;
+}
+
+.study-card:nth-child(2) {
+   background: var(--blue-light);
+}
+
+.study-card:nth-child(3) {
+   background: var(--pink);
+}
+
+.study-card:hover {
+   transform: translateY(-8px);
+}
+
+.study-number {
+   font-family: "DM Serif Display", serif;
+   font-size: 30px;
+   color: var(--blue-dark);
+}
+
+.study-card h3 {
+   font-family: "DM Serif Display", serif;
+   font-size: 35px;
+   font-weight: 400;
+   margin: 30px 0 15px;
+}
+
+.study-card p {
+   color: #646464;
+   font-size: 13px;
+   line-height: 1.8;
+}
+
+/* =====================================================
+  CURIOSIDADES
+  ===================================================== */
+.facts {
+   padding: 120px 12%;
+   background: var(--blue-light);
+   display: grid;
+   grid-template-columns: 0.7fr 1.3fr;
+   gap: 100px;
+}
+
+.facts-title h2 {
+   font-family: "DM Serif Display", serif;
+   font-size: 75px;
+   line-height: 0.9;
+   font-weight: 400;
+   margin-top: 20px;
+}
+
+.facts-title em {
+   color: white;
+}
+
+.facts-list {
+   display: flex;
+   flex-direction: column;
+}
+
+.fact {
+   display: grid;
+   grid-template-columns: 50px 1fr;
+   gap: 20px;
+   padding: 25px 0;
+   border-bottom: 1px solid rgba(48,50,56,0.18);
+}
+
+.fact span {
+   font-family: "DM Serif Display", serif;
+   color: var(--brown);
+   font-size: 25px;
+}
+
+.fact p {
+   font-size: 14px;
+   color: #4f555b;
+}
+
+/* =====================================================
+  FRASE
+  ===================================================== */
+.final-quote {
+   padding: 130px 15%;
+   text-align: center;
+   background: var(--cream);
+}
+
+.quote-symbol {
+   display: block;
+   font-family: "DM Serif Display", serif;
+   font-size: 90px;
+   color: var(--brown);
+   height: 70px;
+}
+
+.final-quote p {
+   max-width: 850px;
+   margin: auto;
+   font-family: "DM Serif Display", serif;
+   font-size: clamp(32px, 4vw, 55px);
+   line-height: 1.1;
+   font-style: italic;
+}
+
+.quote-author {
+   display: block;
+   margin-top: 30px;
+   color: var(--blue-dark);
+   font-size: 10px;
+   letter-spacing: 2px;
+   text-transform: uppercase;
+}
+
+/* =====================================================
+  VOLTAR
+  ===================================================== */
+.back-section {
+   padding: 70px;
+   text-align: center;
+}
+
+.back-button {
+   display: inline-block;
+   padding: 15px 25px;
+   background: var(--blue-dark);
+   color: white;
+   font-size: 11px;
+   text-transform: uppercase;
+   letter-spacing: 1.5px;
+   transition: 0.3s;
+}
+
+.back-button:hover {
+   background: var(--brown);
+}
+
+/* =====================================================
+  FOOTER
+  ===================================================== */
+.footer {
+   padding: 70px 7% 30px;
+   background: var(--black);
+   color: white;
+   text-align: center;
+}
+
+.footer-logo {
+   font-family: "DM Serif Display", serif;
+   font-size: 40px;
+}
+
+.footer-logo span {
+   color: var(--brown);
+}
+
+.footer p {
+   margin: 15px 0 40px;
+   color: #bbb;
+   font-size: 13px;
+}
+
+.footer-line {
+   height: 1px;
+   background: rgba(255,255,255,0.15);
+   margin-bottom: 25px;
+}
+
+.footer small {
+   color: #888;
+   font-size: 10px;
+}
+
+/* =====================================================
+  RESPONSIVO
+  ===================================================== */
+@media (max-width: 900px) {
+   .navigation {
+       gap: 15px;
+   }
+
+   .profile-hero {
+       grid-template-columns: 1fr;
+       gap: 60px;
+   }
+
+   .profile-photo {
+       max-width: 550px;
+   }
+
+   .quick-info {
+       grid-template-columns: repeat(2, 1fr);
+   }
+
+   .info-item:nth-child(2) {
+       border-right: none;
+   }
+
+   .contribution {
+       grid-template-columns: 1fr;
+   }
+
+   .contribution-image {
+       min-height: 450px;
+   }
+
+   .studies-grid {
+       grid-template-columns: 1fr;
+   }
+
+   .facts {
+       grid-template-columns: 1fr;
+   }
+}
+
+@media (max-width: 650px) {
+   .header {
+       height: 70px;
+       padding: 0 6%;
+   }
+
+   .navigation {
+       display: none;
+       position: absolute;
+       top: 70px;
+       left: 0;
+       width: 100%;
+       padding: 25px;
+       background: var(--white);
+       flex-direction: column;
+   }
+
+   .navigation.active {
+       display: flex;
+   }
+
+   .menu-button {
+       display: block;
+   }
+
+   .profile-hero {
+       padding: 70px 7%;
+   }
+
+   .profile-text h1 {
+       font-size: 75px;
+   }
+
+   .profile-photo {
+       height: 450px;
+       box-shadow: 12px 12px 0 var(--pink);
+   }
+
+   .quick-info {
+       grid-template-columns: 1fr;
+       padding: 30px 7%;
+   }
+
+   .info-item {
+       border-right: none;
+       border-bottom: 1px solid rgba(117,136,156,0.25);
+       padding: 20px 0;
+   }
+
+   .biography {
+       padding: 80px 7%;
+       grid-template-columns: 1fr;
+       gap: 10px;
+   }
+
+   .text-columns {
+       grid-template-columns: 1fr;
+       gap: 20px;
+   }
+
+   .contribution-content {
+       padding: 80px 7%;
+   }
+
+   .contribution-content h2 {
+       font-size: 55px;
+   }
+
+   .studies {
+       padding: 80px 7%;
+   }
+
+   .studies-header h2 {
+       font-size: 55px;
+   }
+
+   .facts {
+       padding: 80px 7%;
+   }
+
+   .facts-title h2 {
+       font-size: 60px;
+   }
+
+   .final-quote {
+       padding: 90px 7%;
+   }
+}
+
+

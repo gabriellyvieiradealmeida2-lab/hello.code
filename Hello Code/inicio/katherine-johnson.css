@@ -1,0 +1,779 @@
+/* =====================================================
+  BERNOULLI — KATHERINE JOHNSON
+  ===================================================== */
+:root {
+   --blue-dark: #75889C;
+   --blue-light: #B6C6D4;
+   --cream: #E1DBD3;
+   --brown: #BAA49F;
+   --pink: #F2D1C8;
+   --white: #FAF9F7;
+   --black: #303238;
+}
+
+/* RESET */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+   background: var(--white);
+   color: var(--black);
+   font-family: "Inter", sans-serif;
+   line-height: 1.6;
+}
+
+a {
+   text-decoration: none;
+   color: inherit;
+}
+
+/* =====================================================
+  HEADER
+  ===================================================== */
+.header {
+   height: 82px;
+   padding: 0 7%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background: rgba(250,249,247,0.96);
+   border-bottom: 1px solid rgba(117,136,156,0.15);
+   position: sticky;
+   top: 0;
+   z-index: 100;
+   backdrop-filter: blur(10px);
+}
+
+.logo {
+   font-family: "DM Serif Display", serif;
+   font-size: 30px;
+}
+
+.logo span {
+   color: var(--brown);
+}
+
+.navigation {
+   display: flex;
+   gap: 35px;
+}
+
+.navigation a {
+   font-size: 12px;
+   text-transform: uppercase;
+   letter-spacing: 1.5px;
+   color: #555;
+   transition: .3s;
+}
+
+.navigation a:hover {
+   color: var(--blue-dark);
+}
+
+.menu-button {
+   display: none;
+   border: none;
+   background: none;
+   font-size: 24px;
+}
+
+/* =====================================================
+  TEXTOS
+  ===================================================== */
+.section-tag {
+   font-size: 10px;
+   letter-spacing: 3px;
+   text-transform: uppercase;
+   color: var(--blue-dark);
+   font-weight: 600;
+}
+
+/* =====================================================
+  HERO
+  ===================================================== */
+.profile-hero {
+   min-height: 700px;
+   padding: 90px 12%;
+   display: grid;
+   grid-template-columns: 1fr .85fr;
+   align-items: center;
+   gap: 100px;
+   background:
+       radial-gradient(
+           circle at 90% 15%,
+           rgba(182,198,212,.55),
+           transparent 30%
+       ),
+       var(--white);
+}
+
+.profile-text h1 {
+   font-family: "DM Serif Display", serif;
+   font-size: clamp(65px, 7vw, 105px);
+   line-height: .88;
+   font-weight: 400;
+   margin: 25px 0;
+}
+
+.profile-text h1 em {
+   color: var(--blue-dark);
+   font-style: italic;
+}
+
+.subtitle {
+   color: var(--brown);
+   font-size: 18px;
+   max-width: 430px;
+}
+
+.profile-line {
+   width: 100px;
+   height: 2px;
+   background: var(--brown);
+   margin: 30px 0;
+}
+
+.intro {
+   max-width: 510px;
+   color: #666;
+   font-size: 14px;
+   line-height: 1.9;
+}
+
+/* =====================================================
+  FOTO
+  ===================================================== */
+.profile-photo {
+   height: 530px;
+   position: relative;
+   overflow: hidden;
+   background: var(--blue-light);
+   box-shadow: 20px 20px 0 var(--pink);
+}
+
+.profile-photo img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   display: block;
+}
+
+.photo-number {
+   position: absolute;
+   top: 20px;
+   right: 20px;
+   width: 55px;
+   height: 55px;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: rgba(255,255,255,.9);
+   color: var(--blue-dark);
+   font-family: "DM Serif Display", serif;
+   font-size: 23px;
+}
+
+.photo-caption {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   padding: 25px;
+   color: white;
+   font-family: "DM Serif Display", serif;
+   font-size: 25px;
+   background:
+       linear-gradient(
+           transparent,
+           rgba(48,50,56,.8)
+       );
+}
+
+.photo-caption span {
+   display: block;
+   font-family: "Inter", sans-serif;
+   font-size: 9px;
+   letter-spacing: 2px;
+   text-transform: uppercase;
+}
+
+/* =====================================================
+  INFORMAÇÕES
+  ===================================================== */
+.quick-info {
+   display: grid;
+   grid-template-columns: repeat(4,1fr);
+   padding: 45px 10%;
+   background: var(--cream);
+}
+
+.info-item {
+   padding: 10px 25px;
+   border-right: 1px solid rgba(117,136,156,.25);
+}
+
+.info-item:last-child {
+   border: none;
+}
+
+.info-item span {
+   display: block;
+   font-size: 9px;
+   letter-spacing: 1.5px;
+   text-transform: uppercase;
+   color: var(--blue-dark);
+   margin-bottom: 8px;
+}
+
+.info-item strong {
+   font-size: 12px;
+   font-weight: 500;
+}
+
+/* =====================================================
+  BIOGRAFIA
+  ===================================================== */
+.biography {
+   padding: 120px 12%;
+   display: grid;
+   grid-template-columns: 100px 1fr;
+   gap: 60px;
+}
+
+.section-number {
+   font-family: "DM Serif Display", serif;
+   font-size: 70px;
+   color: var(--blue-light);
+}
+
+.biography h2 {
+   font-family: "DM Serif Display", serif;
+   font-size: clamp(45px,5vw,70px);
+   font-weight: 400;
+   line-height: 1;
+   margin: 20px 0 50px;
+}
+
+.biography h2 em {
+   color: var(--brown);
+}
+
+.text-columns {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 35px 70px;
+   max-width: 950px;
+}
+
+.text-columns p {
+   font-size: 14px;
+   color: #656567;
+   line-height: 1.9;
+}
+
+/* =====================================================
+  NASA
+  ===================================================== */
+.nasa-section {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   min-height: 650px;
+}
+
+.nasa-visual {
+   position: relative;
+   overflow: hidden;
+   background: var(--blue-dark);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.orbit {
+   position: absolute;
+   border: 1px solid rgba(255,255,255,.25);
+   border-radius: 50%;
+   transform: rotate(-20deg);
+}
+
+.orbit-one {
+   width: 480px;
+   height: 190px;
+}
+
+.orbit-two {
+   width: 620px;
+   height: 260px;
+}
+
+.orbit-three {
+   width: 750px;
+   height: 330px;
+}
+
+.planet {
+   width: 180px;
+   height: 180px;
+   border-radius: 50%;
+   background: var(--pink);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-family: "DM Serif Display", serif;
+   font-size: 45px;
+   color: var(--blue-dark);
+   z-index: 2;
+   box-shadow:
+       0 0 70px rgba(242,209,200,.35);
+}
+
+.star {
+   position: absolute;
+   color: white;
+   opacity: .7;
+}
+
+.star-one {
+   top: 20%;
+   left: 20%;
+   font-size: 25px;
+}
+
+.star-two {
+   top: 65%;
+   right: 20%;
+   font-size: 17px;
+}
+
+.star-three {
+   top: 30%;
+   right: 15%;
+   font-size: 12px;
+}
+
+.nasa-content {
+   padding: 100px 12%;
+   background: var(--pink);
+}
+
+.nasa-content h2 {
+   font-family: "DM Serif Display", serif;
+   font-size: 65px;
+   line-height: .9;
+   font-weight: 400;
+   margin: 20px 0 40px;
+}
+
+.nasa-content h2 em {
+   color: var(--blue-dark);
+}
+
+.nasa-content > p {
+   color: #5f5c5b;
+   font-size: 14px;
+   line-height: 1.9;
+   margin-bottom: 18px;
+}
+
+.mission-box {
+   display: flex;
+   gap: 20px;
+   padding: 25px;
+   margin-top: 35px;
+   background: rgba(255,255,255,.45);
+}
+
+.mission-number {
+   font-family: "DM Serif Display", serif;
+   font-size: 30px;
+   color: var(--blue-dark);
+}
+
+.mission-box strong {
+   font-family: "DM Serif Display", serif;
+   font-size: 24px;
+   font-weight: 400;
+}
+
+.mission-box p {
+   margin-top: 8px;
+   font-size: 12px;
+   color: #666;
+}
+
+/* =====================================================
+  ESTUDOS
+  ===================================================== */
+.studies {
+   padding: 120px 9%;
+}
+
+.studies-header h2 {
+   font-family: "DM Serif Display", serif;
+   font-size: 65px;
+   line-height: .95;
+   font-weight: 400;
+   margin-top: 20px;
+}
+
+.studies-header em {
+   color: var(--brown);
+}
+
+.studies-grid {
+   display: grid;
+   grid-template-columns: repeat(3,1fr);
+   gap: 25px;
+   margin-top: 60px;
+}
+
+.study-card {
+   min-height: 290px;
+   padding: 40px;
+   background: var(--cream);
+   transition: .3s;
+}
+
+.study-card:nth-child(2) {
+   background: var(--blue-light);
+}
+
+.study-card:nth-child(3) {
+   background: var(--pink);
+}
+
+.study-card:hover {
+   transform: translateY(-8px);
+}
+
+.study-number {
+   font-family: "DM Serif Display", serif;
+   font-size: 30px;
+   color: var(--blue-dark);
+}
+
+.study-card h3 {
+   font-family: "DM Serif Display", serif;
+   font-size: 35px;
+   font-weight: 400;
+   margin: 30px 0 15px;
+}
+
+.study-card p {
+   color: #646464;
+   font-size: 13px;
+   line-height: 1.8;
+}
+
+/* =====================================================
+  CONTRIBUIÇÕES
+  ===================================================== */
+.contributions {
+   padding: 120px 12%;
+   display: grid;
+   grid-template-columns: .7fr 1.3fr;
+   gap: 100px;
+   background: var(--cream);
+}
+
+.contributions-title h2 {
+   font-family: "DM Serif Display", serif;
+   font-size: 70px;
+   line-height: .9;
+   font-weight: 400;
+   margin-top: 20px;
+}
+
+.contributions-title em {
+   color: var(--blue-dark);
+}
+
+.mission {
+   display: grid;
+   grid-template-columns: 60px 1fr;
+   gap: 25px;
+   padding: 30px 0;
+   border-bottom: 1px solid rgba(117,136,156,.25);
+}
+
+.mission > span {
+   font-family: "DM Serif Display", serif;
+   color: var(--brown);
+   font-size: 30px;
+}
+
+.mission h3 {
+   font-family: "DM Serif Display", serif;
+   font-size: 30px;
+   font-weight: 400;
+   margin-bottom: 8px;
+}
+
+.mission p {
+   color: #666;
+   font-size: 13px;
+   line-height: 1.8;
+}
+
+/* =====================================================
+  CURIOSIDADES
+  ===================================================== */
+.facts {
+   padding: 120px 12%;
+   display: grid;
+   grid-template-columns: .7fr 1.3fr;
+   gap: 100px;
+   background: var(--blue-light);
+}
+
+.facts-title h2 {
+   font-family: "DM Serif Display", serif;
+   font-size: 75px;
+   line-height: .9;
+   font-weight: 400;
+   margin-top: 20px;
+}
+
+.facts-title em {
+   color: white;
+}
+
+.fact {
+   display: grid;
+   grid-template-columns: 50px 1fr;
+   gap: 20px;
+   padding: 25px 0;
+   border-bottom: 1px solid rgba(48,50,56,.18);
+}
+
+.fact span {
+   font-family: "DM Serif Display", serif;
+   color: var(--brown);
+   font-size: 25px;
+}
+
+.fact p {
+   font-size: 14px;
+   color: #4f555b;
+}
+
+/* =====================================================
+  LEGADO
+  ===================================================== */
+.legacy {
+   padding: 130px 15%;
+   text-align: center;
+   background: var(--white);
+}
+
+.legacy h2 {
+   font-family: "DM Serif Display", serif;
+   font-size: clamp(45px,5vw,70px);
+   line-height: 1;
+   font-weight: 400;
+   margin: 25px 0;
+}
+
+.legacy h2 em {
+   color: var(--brown);
+}
+
+.legacy p {
+   max-width: 650px;
+   margin: auto;
+   color: #666;
+   font-size: 14px;
+   line-height: 1.9;
+}
+
+/* =====================================================
+  VOLTAR
+  ===================================================== */
+.back-section {
+   padding: 70px;
+   text-align: center;
+}
+
+.back-button {
+   display: inline-block;
+   padding: 15px 25px;
+   background: var(--blue-dark);
+   color: white;
+   font-size: 11px;
+   letter-spacing: 1.5px;
+   text-transform: uppercase;
+   transition: .3s;
+}
+
+.back-button:hover {
+   background: var(--brown);
+}
+
+/* =====================================================
+  FOOTER
+  ===================================================== */
+.footer {
+   padding: 70px 7% 30px;
+   background: var(--black);
+   color: white;
+   text-align: center;
+}
+
+.footer-logo {
+   font-family: "DM Serif Display", serif;
+   font-size: 40px;
+}
+
+.footer-logo span {
+   color: var(--brown);
+}
+
+.footer p {
+   margin: 15px 0 40px;
+   color: #bbb;
+   font-size: 13px;
+}
+
+.footer-line {
+   height: 1px;
+   background: rgba(255,255,255,.15);
+   margin-bottom: 25px;
+}
+
+.footer small {
+   color: #888;
+   font-size: 10px;
+}
+
+/* =====================================================
+  RESPONSIVO
+  ===================================================== */
+@media (max-width: 900px) {
+   .profile-hero {
+       grid-template-columns: 1fr;
+       gap: 60px;
+   }
+
+   .quick-info {
+       grid-template-columns: repeat(2,1fr);
+   }
+
+   .info-item:nth-child(2) {
+       border-right: none;
+   }
+
+   .nasa-section {
+       grid-template-columns: 1fr;
+   }
+
+   .nasa-visual {
+       min-height: 500px;
+   }
+
+   .studies-grid {
+       grid-template-columns: 1fr;
+   }
+
+   .contributions,
+   .facts {
+       grid-template-columns: 1fr;
+   }
+}
+
+@media (max-width: 650px) {
+   .header {
+       height: 70px;
+       padding: 0 6%;
+   }
+
+   .navigation {
+       display: none;
+       position: absolute;
+       top: 70px;
+       left: 0;
+       width: 100%;
+       padding: 25px;
+       background: var(--white);
+       flex-direction: column;
+   }
+
+   .navigation.active {
+       display: flex;
+   }
+
+   .menu-button {
+       display: block;
+   }
+
+   .profile-hero {
+       padding: 70px 7%;
+   }
+
+   .profile-text h1 {
+       font-size: 70px;
+   }
+
+   .profile-photo {
+       height: 450px;
+       box-shadow: 12px 12px 0 var(--pink);
+   }
+
+   .quick-info {
+       grid-template-columns: 1fr;
+       padding: 30px 7%;
+   }
+
+   .info-item {
+       border-right: none;
+       border-bottom: 1px solid rgba(117,136,156,.25);
+       padding: 20px 0;
+   }
+
+   .biography {
+       padding: 80px 7%;
+       grid-template-columns: 1fr;
+   }
+
+   .text-columns {
+       grid-template-columns: 1fr;
+       gap: 20px;
+   }
+
+   .nasa-content {
+       padding: 80px 7%;
+   }
+
+   .nasa-content h2 {
+       font-size: 55px;
+   }
+
+   .contributions {
+       padding: 80px 7%;
+   }
+
+   .contributions-title h2 {
+       font-size: 60px;
+   }
+
+   .facts {
+       padding: 80px 7%;
+   }
+
+   .facts-title h2 {
+       font-size: 60px;
+   }
+
+   .legacy {
+       padding: 90px 7%;
+   }
+}
+
+

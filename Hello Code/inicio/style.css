@@ -1,0 +1,711 @@
+/* =====================================================
+  BERNOULLI — MULHERES NA CIÊNCIA
+  ===================================================== */
+
+/* ================= CORES ================= */
+:root {
+   --blue-dark: #75889C;
+   --blue-light: #B6C6D4;
+   --cream: #E1DBD3;
+   --brown: #BAA49F;
+   --pink: #F2D1C8;
+   --white: #FAF9F7;
+   --black: #303238;
+}
+
+/* ================= RESET ================= */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+   background: var(--white);
+   color: var(--black);
+   font-family: "Inter", sans-serif;
+   line-height: 1.6;
+}
+
+a {
+   text-decoration: none;
+   color: inherit;
+}
+
+button,
+input {
+   font-family: inherit;
+}
+
+/* =====================================================
+  HEADER
+  ===================================================== */
+.header {
+   width: 100%;
+   height: 82px;
+   padding: 0 6%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background: rgba(250, 249, 247, 0.95);
+   border-bottom: 1px solid rgba(117, 136, 156, 0.15);
+   position: sticky;
+   top: 0;
+   z-index: 100;
+   backdrop-filter: blur(10px);
+}
+
+/* LOGO */
+.logo {
+   font-family: "DM Serif Display", serif;
+   font-size: 30px;
+   letter-spacing: -1px;
+}
+
+.logo span,
+.footer-logo span {
+   color: var(--brown);
+}
+
+/* NAV */
+.navigation {
+   display: flex;
+   gap: 35px;
+}
+
+.navigation a {
+   font-size: 13px;
+   text-transform: uppercase;
+   letter-spacing: 1.5px;
+   color: #555;
+   transition: 0.3s;
+}
+
+.navigation a:hover {
+   color: var(--blue-dark);
+}
+
+/* HEADER RIGHT */
+.header-right {
+   display: flex;
+   align-items: center;
+   gap: 15px;
+}
+
+/* SEARCH */
+.search-box {
+   display: flex;
+   align-items: center;
+   border-bottom: 1px solid var(--blue-dark);
+   padding-bottom: 4px;
+}
+
+.search-box input {
+   width: 150px;
+   border: none;
+   outline: none;
+   background: transparent;
+   font-size: 12px;
+}
+
+.search-box button {
+   border: none;
+   background: none;
+   cursor: pointer;
+}
+
+/* MENU */
+.menu-button {
+   display: none;
+   border: none;
+   background: none;
+   font-size: 24px;
+   cursor: pointer;
+}
+
+/* =====================================================
+  HERO
+  ===================================================== */
+.hero {
+   min-height: 720px;
+   padding: 100px 9%;
+   display: grid;
+   grid-template-columns: 1fr 0.8fr;
+   align-items: center;
+   gap: 80px;
+   background:
+       radial-gradient(
+           circle at 90% 20%,
+           rgba(242, 209, 200, 0.55),
+           transparent 30%
+       ),
+       var(--white);
+}
+
+.small-title,
+.section-tag {
+   display: inline-block;
+   font-size: 11px;
+   letter-spacing: 3px;
+   text-transform: uppercase;
+   color: var(--blue-dark);
+   font-weight: 600;
+}
+
+.hero h1 {
+   font-family: "DM Serif Display", serif;
+   font-size: clamp(55px, 7vw, 100px);
+   line-height: 0.98;
+   font-weight: 400;
+   margin: 25px 0;
+}
+
+.hero h1 em {
+   color: var(--blue-dark);
+   font-style: italic;
+}
+
+.hero p {
+   max-width: 540px;
+   color: #65676c;
+   font-size: 16px;
+   line-height: 1.9;
+   margin-bottom: 35px;
+}
+
+.hero-button {
+   display: inline-flex;
+   align-items: center;
+   gap: 25px;
+   padding: 15px 22px;
+   background: var(--blue-dark);
+   color: white;
+   font-size: 12px;
+   text-transform: uppercase;
+   letter-spacing: 1.5px;
+   transition: 0.3s;
+}
+
+.hero-button:hover {
+   background: var(--brown);
+}
+
+.hero-button span {
+   font-size: 18px;
+}
+
+/* HERO DECORATION */
+.hero-decoration {
+   height: 500px;
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.circle {
+   position: absolute;
+   border-radius: 50%;
+}
+
+.circle-one {
+   width: 390px;
+   height: 390px;
+   background: var(--blue-light);
+   right: 5%;
+}
+
+.circle-two {
+   width: 230px;
+   height: 230px;
+   background: var(--pink);
+   left: 5%;
+   bottom: 5%;
+}
+
+.hero-card {
+   position: relative;
+   z-index: 2;
+   width: 270px;
+   height: 350px;
+   background: var(--cream);
+   border: 12px solid rgba(255, 255, 255, 0.65);
+   box-shadow: 0 20px 50px rgba(117, 136, 156, 0.2);
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   padding: 30px;
+}
+
+.hero-card-number {
+   font-family: "DM Serif Display", serif;
+   font-size: 40px;
+   color: var(--blue-dark);
+}
+
+.hero-card-text {
+   font-family: "Caveat", cursive;
+   font-size: 48px;
+   color: var(--brown);
+   transform: rotate(-5deg);
+}
+
+.hero-card-symbol {
+   align-self: flex-end;
+   font-size: 35px;
+   color: var(--blue-dark);
+}
+
+/* =====================================================
+  ABOUT
+  ===================================================== */
+.about {
+   padding: 120px 12%;
+   display: grid;
+   grid-template-columns: 100px 1fr;
+   gap: 70px;
+   background: var(--cream);
+}
+
+.about-number {
+   font-family: "DM Serif Display", serif;
+   font-size: 80px;
+   color: var(--blue-dark);
+   opacity: 0.45;
+}
+
+.about-content {
+   max-width: 900px;
+}
+
+.about h2 {
+   font-family: "DM Serif Display", serif;
+   font-size: clamp(45px, 5vw, 72px);
+   font-weight: 400;
+   line-height: 1.05;
+   margin: 20px 0 35px;
+}
+
+.about h2 em {
+   color: var(--brown);
+}
+
+.about p {
+   max-width: 750px;
+   color: #5f5c5b;
+   margin-bottom: 18px;
+   font-size: 16px;
+}
+
+/* =====================================================
+  SCIENTISTS
+  ===================================================== */
+.scientists {
+   padding: 120px 7%;
+   background: var(--white);
+}
+
+.section-header {
+   display: grid;
+   grid-template-columns: 1fr 0.6fr;
+   gap: 60px;
+   align-items: end;
+   margin-bottom: 60px;
+}
+
+.section-header h2 {
+   font-family: "DM Serif Display", serif;
+   font-size: clamp(40px, 5vw, 65px);
+   font-weight: 400;
+   line-height: 1;
+   margin-top: 15px;
+}
+
+.section-header > p {
+   color: #6d6d70;
+   font-size: 14px;
+   line-height: 1.8;
+}
+
+/* GRID */
+.scientist-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 28px;
+}
+
+/* CARD */
+.scientist-card {
+   display: block;
+   background: var(--cream);
+   overflow: hidden;
+   border-radius: 4px;
+   transition:
+       transform 0.35s ease,
+       box-shadow 0.35s ease;
+}
+
+.scientist-card:hover {
+   transform: translateY(-10px);
+   box-shadow:
+       0 25px 50px rgba(117, 136, 156, 0.18);
+}
+
+/* =====================================================
+  FOTO DOS CIENTISTAS
+  ===================================================== */
+.scientist-image {
+   position: relative;
+   width: 100%;
+   height: 420px;
+   overflow: hidden;
+   background: var(--blue-light);
+}
+
+.scientist-image img {
+   width: 100%;
+   height: 100%;
+   display: block;
+   object-fit: cover;
+   object-position: center;
+   transition: transform 0.6s ease;
+}
+
+.scientist-card:hover
+.scientist-image img {
+   transform: scale(1.05);
+}
+
+/* Overlay */
+.scientist-image::after {
+   content: "";
+   position: absolute;
+   inset: 0;
+   background:
+       linear-gradient(
+           to top,
+           rgba(117, 136, 156, 0.35),
+           transparent 50%
+       );
+   pointer-events: none;
+}
+
+/* NÚMERO */
+.card-number {
+   position: absolute;
+   top: 18px;
+   right: 18px;
+   width: 44px;
+   height: 44px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: rgba(255, 255, 255, 0.88);
+   color: var(--blue-dark);
+   font-family: "DM Serif Display", serif;
+   font-size: 18px;
+   border-radius: 50%;
+   backdrop-filter: blur(5px);
+   z-index: 2;
+}
+
+/* =====================================================
+  INFORMAÇÕES DOS CARDS
+  ===================================================== */
+.scientist-info {
+   padding: 30px;
+}
+
+.scientist-area {
+   font-size: 10px;
+   letter-spacing: 1.7px;
+   text-transform: uppercase;
+   color: var(--blue-dark);
+   font-weight: 600;
+}
+
+.scientist-info h3 {
+   font-family: "DM Serif Display", serif;
+   font-size: 38px;
+   font-weight: 400;
+   margin: 10px 0 15px;
+}
+
+.scientist-info p {
+   font-size: 13px;
+   line-height: 1.8;
+   color: #656567;
+   min-height: 95px;
+}
+
+.read-more {
+   display: inline-block;
+   margin-top: 20px;
+   color: var(--brown);
+   font-size: 12px;
+   font-weight: 600;
+   letter-spacing: 0.5px;
+}
+
+/* SEM RESULTADOS */
+.no-results {
+   display: none;
+   text-align: center;
+   padding: 60px;
+   color: var(--blue-dark);
+   font-family: "DM Serif Display", serif;
+   font-size: 28px;
+}
+
+/* =====================================================
+  BLOG
+  ===================================================== */
+.blog {
+   padding: 120px 7%;
+   background: var(--blue-light);
+}
+
+.blog .section-header {
+   margin-bottom: 50px;
+}
+
+.blog-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 25px;
+}
+
+.blog-card {
+   position: relative;
+   min-height: 300px;
+   padding: 35px;
+   background: var(--white);
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   overflow: hidden;
+}
+
+.blog-card-number {
+   position: absolute;
+   top: 25px;
+   right: 25px;
+   font-family: "DM Serif Display", serif;
+   font-size: 35px;
+   color: var(--pink);
+}
+
+.blog-card span {
+   font-size: 10px;
+   letter-spacing: 2px;
+   color: var(--blue-dark);
+   margin-bottom: 15px;
+}
+
+.blog-card h3 {
+   font-family: "DM Serif Display", serif;
+   font-size: 30px;
+   line-height: 1.1;
+   font-weight: 400;
+   margin-bottom: 25px;
+}
+
+.blog-card a {
+   color: var(--brown);
+   font-size: 12px;
+   font-weight: 600;
+}
+
+/* =====================================================
+  FOOTER
+  ===================================================== */
+.footer {
+   padding: 70px 7% 30px;
+   background: var(--black);
+   color: white;
+   text-align: center;
+}
+
+.footer-logo {
+   font-family: "DM Serif Display", serif;
+   font-size: 40px;
+}
+
+.footer p {
+   margin: 15px 0 40px;
+   color: #bbb;
+   font-size: 13px;
+}
+
+.footer-line {
+   height: 1px;
+   background: rgba(255, 255, 255, 0.15);
+   margin-bottom: 25px;
+}
+
+.footer small {
+   color: #888;
+   font-size: 10px;
+   letter-spacing: 1px;
+}
+
+/* =====================================================
+  ANIMAÇÕES
+  ===================================================== */
+.scientist-card,
+.blog-card,
+.about-content {
+   opacity: 0;
+   transform: translateY(30px);
+   transition:
+       opacity 0.7s ease,
+       transform 0.7s ease;
+}
+
+.scientist-card.visible,
+.blog-card.visible,
+.about-content.visible {
+   opacity: 1;
+   transform: translateY(0);
+}
+
+/* =====================================================
+  RESPONSIVIDADE — TABLET
+  ===================================================== */
+@media (max-width: 1000px) {
+   .navigation {
+       gap: 18px;
+   }
+
+   .search-box {
+       display: none;
+   }
+
+   .hero {
+       grid-template-columns: 1fr;
+       padding-top: 80px;
+   }
+
+   .hero-decoration {
+       height: 400px;
+   }
+
+   .scientist-grid {
+       grid-template-columns: repeat(2, 1fr);
+   }
+
+   .blog-grid {
+       grid-template-columns: repeat(2, 1fr);
+   }
+}
+
+/* =====================================================
+  RESPONSIVIDADE — CELULAR
+  ===================================================== */
+@media (max-width: 700px) {
+   .header {
+       height: 70px;
+       padding: 0 5%;
+   }
+
+   .navigation {
+       display: none;
+       position: absolute;
+       top: 70px;
+       left: 0;
+       width: 100%;
+       padding: 25px;
+       background: var(--white);
+       flex-direction: column;
+       gap: 20px;
+       border-bottom: 1px solid var(--blue-light);
+   }
+
+   .navigation.active {
+       display: flex;
+   }
+
+   .menu-button {
+       display: block;
+   }
+
+   .hero {
+       padding: 70px 7%;
+       min-height: auto;
+   }
+
+   .hero h1 {
+       font-size: 58px;
+   }
+
+   .hero-decoration {
+       height: 350px;
+   }
+
+   .circle-one {
+       width: 280px;
+       height: 280px;
+   }
+
+   .hero-card {
+       width: 220px;
+       height: 290px;
+   }
+
+   .about {
+       padding: 80px 7%;
+       grid-template-columns: 1fr;
+       gap: 20px;
+   }
+
+   .about-number {
+       font-size: 50px;
+   }
+
+   .scientists {
+       padding: 80px 7%;
+   }
+
+   .section-header {
+       grid-template-columns: 1fr;
+       gap: 20px;
+   }
+
+   .scientist-grid {
+       grid-template-columns: 1fr;
+   }
+
+   .scientist-image {
+       height: 450px;
+   }
+
+   .blog {
+       padding: 80px 7%;
+   }
+
+   .blog-grid {
+       grid-template-columns: 1fr;
+   }
+}
+
+/* =====================================================
+  CELULAR PEQUENO
+  ===================================================== */
+@media (max-width: 400px) {
+   .hero h1 {
+       font-size: 48px;
+   }
+
+   .scientist-image {
+       height: 400px;
+   }
+
+   .scientist-info h3 {
+       font-size: 32px;
+   }
+}
+
